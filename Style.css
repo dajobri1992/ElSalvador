@@ -1,0 +1,235 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f4f4f4;
+  color:#333;
+  line-height:1.6;
+}
+
+/* =========================
+   NAVBAR - FLEXBOX
+==========================*/
+header{
+  background:#0d3b66;
+  color:white;
+  padding:15px 40px;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.logo{
+  font-size:1.8rem;
+  font-weight:bold;
+}
+.contenedor {
+    display: flex;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.nav-links a:hover{
+  color:#ffd166;
+}
+
+/* =========================
+   HERO - FLEXBOX
+==========================*/
+.hero{
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop') center/cover no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+  padding:20px;
+}
+
+.hero-content{
+  background:rgba(0,0,0,0.5);
+  padding:30px;
+  border-radius:10px;
+}
+
+.hero h1{
+  font-size:3rem;
+  margin-bottom:10px;
+}
+
+.hero p{
+  margin-bottom:20px;
+  font-size:1.2rem;
+}
+
+.btn{
+  background:#ffd166;
+  color:#000;
+  border:none;
+  padding:12px 25px;
+  border-radius:5px;
+  cursor:pointer;
+  font-size:1rem;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#ffb703;
+  transform:scale(1.05);
+}
+
+/* =========================
+   GALERÍA - CSS GRID
+==========================*/
+.galeria{
+  padding:50px 30px;
+}
+
+.galeria h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#0d3b66;
+}
+
+.grid-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  transition:transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:15px;
+}
+
+.card-content h3{
+  margin-bottom:10px;
+  color:#0d3b66;
+}
+
+/* =========================
+   INFORMACIÓN - FLEXBOX
+==========================*/
+.info{
+  background:#ffffff;
+  padding:50px 30px;
+}
+
+.info h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:#0d3b66;
+}
+
+.info-container{
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.info-box{
+  background:#e9ecef;
+  padding:20px;
+  border-radius:10px;
+  width:300px;
+  text-align:center;
+}
+
+/* =========================
+   FOOTER - FLEXBOX
+==========================*/
+footer{
+  background:#0d3b66;
+  color:white;
+  padding:20px;
+}
+
+.footer-content{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+  text-align:center;
+}
+
+/* =========================
+   RESPONSIVE
+==========================*/
+
+/* MÓVIL */
+@media(max-width:600px){
+
+  .navbar{
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .grid-container{
+    grid-template-columns:1fr;
+  }
+
+  .hero h1{
+    font-size:2rem;
+  }
+}
+
+/* TABLET */
+@media(max-width:900px){
+
+  .grid-container{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+/* ESCRITORIO */
+@media(min-width:901px){
+
+  .grid-container{
+    grid-template-columns:repeat(3, 1fr);
+  }
+}
